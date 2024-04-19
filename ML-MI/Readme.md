@@ -1,14 +1,14 @@
 This is just a simple code of how to process EEG data when I learn motor imagination, not necessarily correct, just for reference
-这只是我学习运动想象时如何处理脑电图数据的简单代码，不一定正确，仅供参考
+
 
 In this experiment, CSP and LDA were used for simple classification of EEG data. It is worth noting that at this time, EEG data were not preprocessed and denoised, nor were the subsequent models optimized and adjusted. It was only a simple experiment
-本实验采用CSP和LDA对脑电图数据进行简单分类。值得注意的是，此时脑电图数据没有进行预处理和去噪，后续模型也没有进行优化和调整。这只是一个简单的实验
+
 
 This experiment adopts the MNE and sklearn modules in python
-本实验采用 python 中的 MNE 和 sklearn 模块
+
 
 And some of my notes from BCI learning are uploaded here, but the notes are in Chinese
-我的一些BCI学习笔记上传到这里，但这些笔记是中文的
+
 
 One of the files named EEG_MI_ML is a simple experiment of motion imaging left-handed and right-handed binary classification. The experiment involves filtering processing, CSP and LDA, and the mat files related to the experiment are also uploaded
-其中一个名为 EEG_MI_ML 的文件是运动成像左手和右手二元分类的简单实验。实验涉及过滤处理、CSP 和 LDA，并且还上传了与实验相关的 mat 文件
+
