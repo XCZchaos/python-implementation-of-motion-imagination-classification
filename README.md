@@ -1,5 +1,5 @@
 # python-implementation-of-motion-imagination-classification
-This is just a simple code of how to process EEG data when I learn motor imagination, just for reference
+This repository corresponds to the code for my blog
 
 
 
