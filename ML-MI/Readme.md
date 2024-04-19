@@ -7,7 +7,6 @@ In this experiment, CSP and LDA were used for simple classification of EEG data.
 This experiment adopts the MNE and sklearn modules in python
 
 
-And some of my notes from BCI learning are uploaded here, but the notes are in Chinese
 
 
 One of the files named EEG_MI_ML is a simple experiment of motion imaging left-handed and right-handed binary classification. The experiment involves filtering processing, CSP and LDA, and the mat files related to the experiment are also uploaded
