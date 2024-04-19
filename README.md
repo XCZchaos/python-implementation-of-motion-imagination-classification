@@ -1,5 +1,5 @@
 # python-implementation-of-motion-imagination-classification
-This is just a simple code of how to process EEG data when I learn motor imagination, not necessarily correct, just for reference
+This is just a simple code of how to process EEG data when I learn motor imagination, just for reference
 
 
 
