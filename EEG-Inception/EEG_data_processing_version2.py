@@ -6,6 +6,7 @@ import scipy.io
 import torchvision.transforms as transforms
 
 """进行预处理前请检查数据是否存在过多的噪声，或者数据是否稳定"""
+""" Please check whether the data is noisy or stable before preprocessing. """
 
 # 进行数据预处理 只适合T结尾的data数据，其他的需要修改函数 filename需以.npy结尾
 def transform_save_data(filename,save_filename):
@@ -14,15 +15,18 @@ def transform_save_data(filename,save_filename):
     events,event_id = mne.events_from_annotations(raw)
     raw.info['bads'] += ['EOG-left','EOG-central','EOG-right']
     # 运动想象时间2-6秒
+    # Motor imagery time 2-6 seconds
     tmin,tmax = 2,6 
     event_id = {'769':7,'770':8,'771':9,'772':10}
     # 需要重新加载raw对象进行滤波处理
+    # Need to reload raw object for filtering
     raw.load_data()
     raw.filter(7.0,35.0,fir_design='firwin')
     picks = mne.pick_types(raw.info,meg=False,eeg=True,stim=False,exclude='bads')
     epochs = mne.Epochs(raw=raw,events=events,event_id=event_id,tmin=tmin,tmax=tmax,preload=True,baseline=None,picks=picks)
     epoch_data = epochs.get_data()
     # 将最后一位数据进行去除
+    # remove the last bit
     epoch_data = epoch_data[:,:,:-1]
 
 
@@ -31,6 +35,7 @@ def transform_save_data(filename,save_filename):
 
 
 # 进行归一化处理
+# perform normalization
 def data_processing(BCI_IV_2a_data,label_filename):
     Scaler = StandardScaler()
     X_train = BCI_IV_2a_data.reshape(BCI_IV_2a_data.shape[0], 22000)
@@ -51,6 +56,7 @@ def data_processing(BCI_IV_2a_data,label_filename):
 
 
 # 进行转换成Tensor格式的数据  保存的文件的格式应该以pt为后缀
+# Data to be converted to Tensor format The format of the saved file should be postfixed with pt
 def data_transform_tensor(acc_train,y_oh,save_datafilename,save_labelfilename):
     transf = transforms.ToTensor()
     d = transf(y_oh)
@@ -69,6 +75,7 @@ def data_transform_tensor(acc_train,y_oh,save_datafilename,save_labelfilename):
 
 
 # 将数据进行联合
+# concat the data
 def combine_data(data_list,label_list,data_filename,label_filename):
     """_summary_
     将增强的EEG_data数据进行拼接 并保存为pt后缀文件
@@ -92,7 +99,7 @@ def combine_data(data_list,label_list,data_filename,label_filename):
 
 
 # 进行时域上EEG数据增强  通过分割，重构 打乱数据
-
+# Perform temporal EEG data augmentation by segmenting and reconstructing the shuffled data    --------From the Conformer paper
 def interaug(timg, label,batch_size):
     """_summary_
     函数还在完善中 根据需求进行更改     来自Conformer论文
