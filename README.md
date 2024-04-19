@@ -6,4 +6,4 @@ This is just a simple code of how to process EEG data when I learn motor imagina
 
 And some of my notes from BCI learning are uploaded here, but the notes are in Chinese
 
-
+Thank you for your interest in this repository
