@@ -10,6 +10,14 @@ Thank you for your interest in this repository
 
 
 
+If you have some questions, Please contact me.
+
+
+E-mail:asherxiong552@gmail.com
+
+
+
+
 updata log:
 Updated the New folder 'New train fold',If you want to learn more,please read the file 'Readme.md' in 'New train folder'        
 --------Edited on 2024/8/14
